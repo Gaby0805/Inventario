@@ -7,6 +7,12 @@ DATABASE{
         preço
         quantidade
 
+    )
+    clietes(
+
+        nome 
+        senha
+
 
     )
     edição de produto(
