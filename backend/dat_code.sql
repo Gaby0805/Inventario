@@ -8,6 +8,7 @@ use estoque_produtos
 CREATE TABLE clients(
 	id_clients integer auto_increment PRIMARY KEY,
     name_client varchar(30),
+    ranking ENUM('adm','clt'),
     password_client varchar(20)
 );
 
@@ -27,7 +28,7 @@ CREATE TABLE category(
     id_categoy int AUTO_INCREMENT PRIMARY KEY,
     name_category VARCHAR(30) not null,
     produtos_id int,
-    Foreign Key (produtos_id) REFERENCES produtos(id_produtos)
+    Foreign Key (produtos_id) REFERENCES produtos(id_produts)
     ); 
 
 CREATE TABLE logs_geral(
@@ -35,3 +36,5 @@ CREATE TABLE logs_geral(
     logs_text LONGTEXT
 )
 
+
+DROP Table estoque_produtos.clients
