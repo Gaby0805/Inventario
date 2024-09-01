@@ -7,7 +7,7 @@ def autentfy(name_client, password_client):
 
         cnx = bd.connectios()
         cursor = cnx.cursor()
-        cursor.execute('select * from clients  where name_client =%s and password_client=%s',(name_client, password_client))
+        cursor.execute('select * from clients  where gmail_client =%s and password_client=%s',(name_client, password_client))
         result = cursor.fetchone()
         cursor.close()
         #caso encontrar login, retorne que existe

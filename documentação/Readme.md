@@ -10,7 +10,7 @@ DATABASE{
     )
     clietes(
 
-        nome 
+        gmail
         senha
 
 
