@@ -36,5 +36,4 @@ CREATE TABLE logs_geral(
 )
 
     SELECT * from estoque_produtos.category
-
-DROP DATABASE estoque_produtos
+    INSERT INTO estoque_produtos.clients(gmail, raking, )
