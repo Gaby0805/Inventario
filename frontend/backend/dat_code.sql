@@ -18,8 +18,8 @@ create table product(
     description_produts varchar(60),
     price_product int not null,
     quantity_produts int not null,
-    client_id INT,
-    Foreign Key (client_id) REFERENCES clients(id_client)
+    category_id INT,
+    Foreign Key (category_id) REFERENCES category(id_category)
 );
 
 
@@ -39,3 +39,4 @@ CREATE TABLE logs_geral(
 SELECT * from estoque_produtos.clients
 
 INSERT into estoque_produtos.clients (gmail,ranking, password_client) VALUES('gabriel', 'adm', '123')
+
