@@ -12,12 +12,12 @@ CREATE TABLE clients(
     password_client varchar(20)
 );
 
-create table product(
-	id_product int auto_increment PRIMARY KEY,
-	name_produts varchar(30) not null,
-    description_produts varchar(60),
-    price_product int not null,
-    quantity_produts int not null,
+create table produtos(
+	id_produtos int auto_increment PRIMARY KEY,
+	name_produtos varchar(30) not null,
+    description_produtos varchar(60),
+    price_produtos int not null,
+    quantity_produtos int not null,
     category_id INT,
     Foreign Key (category_id) REFERENCES category(id_category)
 );
@@ -25,10 +25,9 @@ create table product(
 
 
 CREATE TABLE category(
-    id_categoy int AUTO_INCREMENT PRIMARY KEY,
+    id_category int AUTO_INCREMENT PRIMARY KEY,
     name_category VARCHAR(30) not null,
-    product_id int,
-    Foreign Key (product_id) REFERENCES produtos(id_product)
+    produtos_id int
     ); 
 
 CREATE TABLE logs_geral(
@@ -36,7 +35,6 @@ CREATE TABLE logs_geral(
     logs_text LONGTEXT
 )
 
-SELECT * from estoque_produtos.clients
+    SELECT * from estoque_produtos.category
 
-INSERT into estoque_produtos.clients (gmail,ranking, password_client) VALUES('gabriel', 'adm', '123')
-
+DROP DATABASE estoque_produtos
