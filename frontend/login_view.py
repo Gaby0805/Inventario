@@ -1,9 +1,9 @@
 import flet as ft
 from sys import path
-path.append('./frontend/backend-')
+path.append('./frontend/backend')
 import backend.autentica
 def login_view(page: ft.Page ):
-#concerta import
+
     def button_send(e):
         
         text_gmail = textfield_name.value
