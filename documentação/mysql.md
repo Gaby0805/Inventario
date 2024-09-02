@@ -15,3 +15,4 @@ create table produtos (
 	category_produts enum('brinquedos','armas','pessoas'),
     primary key(id_produts)
 );
+

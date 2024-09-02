@@ -1,13 +1,14 @@
 import flet as ft
-#erro aqui no import
-def login_view(page: ft.Page):
-
+from sys import path
+path.append('./frontend/backend-')
+import backend.autentica
+def login_view(page: ft.Page ):
+#concerta import
     def button_send(e):
-        bread = tru.autentfy()
-        text_name = textfield_name.value
+        
+        text_gmail = textfield_name.value
         text_password = textfield_senha.value
-        bread(text_name, text_password)
-        bread(text_name,text_password)
+        bread = (text_gmail,text_password)
         if bread:
             print('tudo cecrto  flet')
         else:
@@ -15,7 +16,7 @@ def login_view(page: ft.Page):
 
 
     login_text = ft.Text()
-    textfield_name = ft.TextField(label='Nome',input_filter=ft.TextOnlyInputFilter() ,width=450, )
+    textfield_name = ft.TextField(label='gmail',input_filter=ft.TextOnlyInputFilter() ,width=450, )
     textfield_senha = ft.TextField(label='senha' ,width=450)
     button_create = ft.ElevatedButton('Enviar', on_click=button_send)
 
