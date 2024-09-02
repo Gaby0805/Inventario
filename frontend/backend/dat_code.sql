@@ -12,6 +12,12 @@ CREATE TABLE clients(
     password_client varchar(20)
 );
 
+CREATE TABLE category(
+    id_category int AUTO_INCREMENT PRIMARY KEY,
+    name_category VARCHAR(30) not null,
+    produtos_id int
+    ); 
+
 create table produtos(
 	id_produtos int auto_increment PRIMARY KEY,
 	name_produtos varchar(30) not null,
@@ -23,12 +29,6 @@ create table produtos(
 );
 
 
-
-CREATE TABLE category(
-    id_category int AUTO_INCREMENT PRIMARY KEY,
-    name_category VARCHAR(30) not null,
-    produtos_id int
-    ); 
 
 CREATE TABLE logs_geral(
     id_logs int PRIMARY KEY,
