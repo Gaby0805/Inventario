@@ -35,5 +35,9 @@ CREATE TABLE logs_geral(
     logs_text LONGTEXT
 )
 
-    SELECT * from estoque_produtos.category
-    INSERT INTO estoque_produtos.clients(gmail, raking, )
+    SELECT * from estoque_produtos.clients
+
+
+INSERT INTO estoque_produtos.clients(gmail, ranking, password_client ) VALUES ('a', "1", '123')
+
+drop database estoque_produtos

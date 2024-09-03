@@ -7,10 +7,10 @@ class Autenticador():
 
             cnx = connectios()
             cursor = cnx.cursor()
-            cursor.execute('select * from clients  where gmail=%s and password_client=%s',(gmail_client, password_client))
+            cursor.execute("select * from clients  where gmail=%s and password_client=%s",(gmail_client, password_client))
             result = cursor.fetchone()
-            cursor.close()
             #caso encontrar login, retorne que existe
+            cnx.close()
             if result:
                 print('tudo deu certo autentica')
                 return True

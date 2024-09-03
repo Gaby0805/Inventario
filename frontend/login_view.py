@@ -1,14 +1,14 @@
 import flet as ft
 from sys import path
 path.append('./frontend/backend')
-import backend.autentica
+import backend.autentica as aut
 def login_view(page: ft.Page ):
 
     def button_send(e):
         
         text_gmail = textfield_name.value
         text_password = textfield_senha.value
-        bread = (text_gmail,text_password)
+        bread = aut.Autenticador.autentfy(text_gmail,text_password)
         if bread:
             print('tudo cecrto  flet')
         else:
