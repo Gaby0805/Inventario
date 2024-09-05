@@ -14,14 +14,15 @@ CREATE TABLE clients(
 
 CREATE TABLE category(
     id_category int AUTO_INCREMENT PRIMARY KEY,
-    name_category VARCHAR(30) not null,
-    produtos_id int
-    ); 
+    name_category VARCHAR(30));
+
+
+
 
 create table produtos(
 	id_produtos int auto_increment PRIMARY KEY,
 	name_produtos varchar(30) not null,
-    description_produtos varchar(60),
+    description_produtos TEXT,
     price_produtos int not null,
     quantity_produtos int not null,
     category_id INT,
@@ -35,10 +36,16 @@ CREATE TABLE logs_geral(
     logs_text LONGTEXT
 )
 
-    SELECT * from estoque_produtos.clients
+SELECT * from estoque_produtos.clients
 
-SELECT  ranking  from clients WHERE gmail="b"
+SELECT  *  from produtos 
 
 INSERT INTO estoque_produtos.clients(gmail, ranking, password_client ) VALUES ('b', "2", '456')
 
 drop database estoque_produtos
+
+INSERT into category(name_category) VALUE('2')
+
+SELECT * from category
+
+update produtos set name_produtos='augusto', description_produtos='sexo1', price_produtos=2, quantity_produtos=3, category_id=4 where id_produtos=1 
