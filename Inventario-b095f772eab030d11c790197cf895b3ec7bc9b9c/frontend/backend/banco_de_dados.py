@@ -1,7 +1,6 @@
 import mysql.connector
 from mysql.connector import errorcode
 #criação da connecção banco de dados
-
 def connectios():
     try:
         cnx = mysql.connector.connect(

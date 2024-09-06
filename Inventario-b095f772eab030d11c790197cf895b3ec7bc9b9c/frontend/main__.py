@@ -18,13 +18,8 @@ def main(page: ft.Page):
                 url='/produtos/',
                 clear=False,
                 view=produtos_view
-            ),
-            path(
-                url='/clt',
-                clear=False,
-                view=
-
-            ),
+            )
+    
         ]
 
     except SyntaxError as e:

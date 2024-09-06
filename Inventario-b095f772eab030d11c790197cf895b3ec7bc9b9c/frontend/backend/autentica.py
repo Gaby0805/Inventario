@@ -1,5 +1,5 @@
 from banco_de_dados import connectios
-
+import logs_ as lg
 class Autenticador():
     def autentfy(gmail_client, password_client):
 
@@ -21,5 +21,4 @@ class Autenticador():
                 return False
             
         except TabError as e:
-            print(f'o error é {e}')
-Autenticador.autentfy('a','123')
+            lg.logs(e)

@@ -1,12 +1,13 @@
 from banco_de_dados import connectios
-
+from logs_ import logs 
 
 def criar_categoria(nome):
-    cnx = connectios()
-    cursor = cnx.cursor()
-    cursor.execute('insert into category(name_category) value(%s)',(nome,))
-    cnx.commit()
-    cnx.close()
-    print('tudo deu certo categoria')
-criar_categoria('bolos')
-
+    try:
+        cnx = connectios()
+        cursor = cnx.cursor()
+        cursor.execute('insert into category(name_category) value(%s)',(nome,))
+        cnx.commit()
+        cnx.close()
+        print('tudo deu certo categoria')
+    except NameError as e:
+        logs(e)
