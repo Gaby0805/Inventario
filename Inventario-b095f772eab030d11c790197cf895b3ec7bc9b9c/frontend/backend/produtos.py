@@ -34,6 +34,13 @@ def add_produtos(nome,preco,descricao,quantidade,categoria):
         cnx.close()
     except NameError as e:
         lgs.logs(e)
+
+
+
+
+
+
+
 def edit_produtos(nome,preco,descricao,quantidade,categoria,id_prod):
     try:
         cnx = bd.connectios()
@@ -44,6 +51,9 @@ def edit_produtos(nome,preco,descricao,quantidade,categoria,id_prod):
         cnx.close()
     except NameError as e:
        lgs.logs(e) 
+
+
+
 def delete_produto(id):
     try:
         cnx = bd.connectios()

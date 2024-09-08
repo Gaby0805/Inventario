@@ -31,4 +31,7 @@ CREATE TABLE logs_geral(
 
 insert into logs_geral(logs_text) value ('teste_log')
 
-SELECT * from produtos
+INSERT into clients(gmail,ranking,password_client) VALUES('j@.com','clt','1')
+
+
+SELECT * from clients

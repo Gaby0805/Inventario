@@ -65,7 +65,6 @@ def criar_relatorio_logs(page:ft.Page):
     page.add(gerar_relatorio)
 
 
-ft.app(target=criar_relatorio_logs)
 
 
 

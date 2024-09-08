@@ -1,5 +1,5 @@
 from banco_de_dados import connectios
-
+from logs_ import logs as lgs
 
 def logs(texto):
     try:
@@ -10,7 +10,7 @@ def logs(texto):
         print('add aos logs')
         cnx.close()
     except NameError as e:
-        print(e)
+        lgs(e)
 #     CREATE TABLE logs_geral(
 #     id_logs int PRIMARY KEY,
 #     logs_text LONGTEXT
@@ -21,5 +21,3 @@ def listar_logs():
     cursor.execute('select * from logs_geral')
     result = cursor.fetchall()
     return result
-
-listar_logs()
