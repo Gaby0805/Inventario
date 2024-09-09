@@ -1,5 +1,4 @@
 from banco_de_dados import connectios
-from logs_ import logs as lgs
 
 def logs(texto):
     try:

@@ -4,8 +4,8 @@
 import flet as ft
 from flet_route import Routing, path
 from login_view import login_view__
-from protuts_view import produtos_view
-from relatorios import criar_relatorio,criar_relatorio_logs
+from protuts_view import editar_view,excluir,produtos__,produtos_view
+from relatorios import criar_relatorio,criar_relatorio_logs, relatorios
 from categoria_view import categorias_views
 from dashboard import clt_view
 def main(page: ft.Page):
@@ -15,6 +15,11 @@ def main(page: ft.Page):
                 url='/',
                 clear=True,
                 view= login_view__
+            ),
+            path(
+                url='/relatorios',
+                clear=False,
+                view= relatorios
             ),
             path(
                 url='/relatorio/produtos',
@@ -34,18 +39,23 @@ def main(page: ft.Page):
             path(
                 url='/produtos',
                 clear=False,
+                view=produtos__
+            ),
+            path(
+                url='/produtos/criar',
+                clear=False,
                 view=produtos_view
             ),
-            # path(
-            #     url='/produtos/editar',
-            #     clear=False,
-            #     view=
-            # ),
-            # path(
-            #     url='/produtos/excluir',
-            #     clear=False,
-            #     view=
-            # ),
+            path(
+                url='/produtos/editar',
+                clear=False,
+                view=editar_view
+            ),
+            path(
+                url='/produtos/excluir',
+                clear=False,
+                view=excluir
+            ),
             path(
                 url='/dashboard/clt',
                 clear=False,

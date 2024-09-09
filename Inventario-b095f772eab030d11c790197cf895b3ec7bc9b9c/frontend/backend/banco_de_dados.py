@@ -1,6 +1,5 @@
 import mysql.connector
 from mysql.connector import errorcode
-from logs_ import logs as lgs
 #criação da connecção banco de dados
 def connectios():
     try:
@@ -16,5 +15,5 @@ def connectios():
             print('tudo errado')
         return cnx    
     except errorcode as e:
-        lgs(e)
+        print(e)
     

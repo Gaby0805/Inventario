@@ -1,3 +1,4 @@
+
 import flet as ft
 from sys import path
 from flet_route import Basket, Params
@@ -61,7 +62,7 @@ def login_view__(page: ft.Page, params: Params, basket:Basket):
 
 
     login_text = ft.Text('Login de usuario')
-    textfield_name = ft.TextField(label='gmail',input_filter=ft.InputFilter(allow=True, regex_string=r'^[a-z,@,.,1-9]*$') ,width=450,border_color=colors.WHITE, hint_text='coloque @' )
+    textfield_name = ft.TextField(label='gmail',input_filter=ft.InputFilter(allow=True, regex_string=r'^[a-z,@,.,1-9, A-Z]*$') ,width=450,border_color=colors.WHITE, hint_text='coloque @' )
     textfield_senha = ft.TextField(label='senha' ,width=450, border_color=colors.WHITE)
     button_create = ft.ElevatedButton('Enviar', color=colors.WHITE,on_click=button_send,bgcolor=colors.GREY)
     page.add(textfield_name, textfield_senha, button_create)

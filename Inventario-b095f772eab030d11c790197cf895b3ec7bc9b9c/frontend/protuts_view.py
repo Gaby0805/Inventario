@@ -42,23 +42,11 @@ def produtos_view(page: ft.Page,params: Params,basket: Basket):
     price_product =ft.TextField(label='preço do produto', input_filter=ft.NumbersOnlyInputFilter())
     quantity_product = ft.TextField(label='quantidade de protudo', input_filter=ft.NumbersOnlyInputFilter() )
     submite_button = ft.ElevatedButton('enviar', on_click=submite_button_action)# ver como direcionar para dashboard desejado se vai ser o clt ou adm
-    def qual_pagina(e):
-        print(instancia[0])
-        if instancia[0] == ('adm',):
-            valor_ranking = 'adm'
-            page.go(f'/produtos/{valor_ranking}')
-            print('tudo certo adm page')
-        elif instancia[0] == ('clt',):
-            print(instancia[0])
-            valor_ranking = 'clt'
-            page.go(f'/produtos/{valor_ranking}')
-            print('tudo certo, clt page')
-        else:
-            print('bananiha frita')
+
             
-    return_button = ft.ElevatedButton('voltar ao dashboard', on_click= qual_pagina)
+    return_button = ft.ElevatedButton('voltar ao dashboard', on_click= lambda _:page.go('/produtos'))
     return ft.View(
-        '/produtos',
+        '/produtos/criar',
         controls=[
         category,
         nome_product,
@@ -104,7 +92,7 @@ def excluir(page: ft.Page,params:Params, basket: Basket):
 
     )
 
-def editar_view(page: ft.Page):
+def editar_view(page: ft.Page, basket: Basket, params:Params):
     page.title = 'adicionar produto'
     page.bgcolor = '#000'
     page.window.height = 700
@@ -146,3 +134,43 @@ def editar_view(page: ft.Page):
     )
 
 
+def produtos__(page: ft.Page, params:Params, basket: Basket):
+    instancia  = aut.Autenticador.lista
+    page.title = 'adicionar produto'
+    page.bgcolor = '#000'
+    page.window.height = 700
+    page.window.width = 650
+    page.window.center()
+
+    def qual_pagina(e):
+        print(instancia[0])
+        if instancia[0] == ('adm',):
+            page.go(f'/dashboard/adm')
+            print('tudo certo adm page')
+        elif instancia[0] == ('clt',):
+            print(instancia[0])
+            page.go(f'/dashboard/clt')
+            print('tudo certo, clt page')
+        else:
+            print('bananiha frita')
+
+
+    title =  ft.Text('dashboard produtos')
+    criar = ft.ElevatedButton('criar produtos', on_click= lambda _: page.go('/produtos/criar'))
+    editar = ft.ElevatedButton('criar produtos', on_click= lambda _: page.go('/produtos/editar'))
+    excluir = ft.ElevatedButton('criar produtos', on_click= lambda _: page.go('/produtos/excluir'))
+    voltar = ft.ElevatedButton('voltar', on_click= qual_pagina)
+    return ft.View(
+        '/produtos',
+        controls=[
+                criar,editar,excluir,voltar
+
+
+        ]
+
+
+    )
+
+
+
+    

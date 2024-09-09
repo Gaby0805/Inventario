@@ -7,13 +7,25 @@ def clt_view(page:ft.Page, params:Params, basket:Basket):
 
 
     return ft.View(
-        '/dashboard/clt',
+        "/dashboard/clt",
         controls=[
-            ft.Text('voce está no clt')
+            ft.Row(
+                controls=[
+                    ft.Text('Dashboard Funcionario CLT')
+                ],
+            ),
+            ft.Row(
+                controls=[
+                    ft.ElevatedButton('produtos', on_click= lambda _: page.go('/produtos')),
+                    ft.ElevatedButton('relatorios', on_click= lambda _: page.go('/relatorios')),
+                    ft.ElevatedButton('categorias', on_click= lambda _: page.go('/categorias')),
+                    ft.ElevatedButton('sair do aplicativo', on_click= lambda _: page.window.close())
+                ]
+
+
+                
+            )
+
 
         ]
     )
-
-
-    # falta aleart dialogm e os dashboard
-    ''
