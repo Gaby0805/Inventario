@@ -5,7 +5,7 @@ from sys import path
 # from flet_route import Basket, Params
 path.append('./Inventario-b095f772eab030d11c790197cf895b3ec7bc9b9c/frontend/backend')
 from backend.categorias import criar_categoria
-from backend.logs_ import logs
+
 def categorias_views(page:ft.Page,params: Params, basket: Basket ):
     page.title = 'criar categorias'
     page.bgcolor = '#000'

@@ -22,12 +22,12 @@ def main(page: ft.Page):
                 view= relatorios
             ),
             path(
-                url='/relatorio/produtos',
+                url='/relatorios/produtos',
                 clear=False,
                 view=criar_relatorio
             ),
             path(
-                url='/relatorio/logs',
+                url='/relatorios/logs',
                 clear=False,
                 view=criar_relatorio_logs
             ),

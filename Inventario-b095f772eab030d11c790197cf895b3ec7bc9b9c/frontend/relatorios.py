@@ -38,14 +38,17 @@ def criar_relatorio(page:ft.Page, params: Params, basket: Basket):
     #selecionar categorias
     categorias = ft.Dropdown(label='categorias', options=[ft.dropdown.Option(str(i[0]), text=i[1])for i in listar])
     gerar_relatorio = ft.ElevatedButton('gerar PDF', on_click=clicacao)
+    return_button = ft.ElevatedButton('voltar', on_click= lambda _: page.go('/relatorios'))
     return ft.View(
      "/relatorio/produtos",
-     controls=[
-        ft.Text('Relatorio produtos'),
-        ft.Row(
-        categorias,
-        gerar_relatorio
-        )])
+    controls=[
+            categorias,
+            gerar_relatorio,
+            return_button
+
+        ]
+
+             )
 
 
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -70,14 +73,17 @@ def criar_relatorio_logs(page:ft.Page, params: Params, basket:Basket):
 
     def clicacao(e):
         criar_pdf_logs()
-
+    return_button = ft.ElevatedButton('voltar', on_click= lambda _: page.go('/relatorios'))
     gerar_relatorio = ft.ElevatedButton('gerar PDF', on_click=clicacao)
     return ft.View(
-        '/relatorio/logs',
+        '/relatorios/logs',
         controls=[
-                ft.Text('relatorio logs'),
-        gerar_relatorio
-        ])
+            gerar_relatorio,
+            return_button
+
+        ]
+        
+        )
 
 
 def relatorios(page:ft.Page, params: Params, basket: Basket):
@@ -95,33 +101,15 @@ def relatorios(page:ft.Page, params: Params, basket: Basket):
         else:
             print('bananiha frita')
 
-    button1 = ft.ElevatedButton('relatorio produtos', on_click= lambda _: page.go('/relatorio/produtos'))
-    button2 = ft.ElevatedButton('relatorio lolgs', on_click=lambda _: page.go('/relatorio/logs'))
-    button3 = ft.ElevatedButton('voltar', on_click=send)
+    botao = ft.ElevatedButton('relatorio produtos', on_click= lambda _: page.go('/relatorios/produtos'))
+    bb = ft.ElevatedButton('relatorio lolgs', on_click=lambda _: page.go('/relatorios/logs'))
+    po = ft.ElevatedButton('voltar', on_click=send)
 
     return ft.View(
         '/relatorios',
         controls=[
-        ft.Text('dashboard relatorios'),
-            button1,
-            button2,
-            button3
+            botao,
+            bb,
+            po
         ]
         )
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
