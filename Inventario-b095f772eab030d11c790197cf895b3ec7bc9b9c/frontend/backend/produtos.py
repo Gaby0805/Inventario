@@ -64,3 +64,17 @@ def delete_produto(id):
         cnx.close()
     except NameError as e:
         lgs.logs(e)
+
+
+
+def revisao():
+    cnx = bd.connectios()
+    cursor = cnx.cursor()
+    cursor.execute("select if(id_clients<10,'no','yes' ) from clients")
+    result = cursor.fetchone()
+    print(result)
+    if result[0] == 'no' :
+        print('tomas')
+    else:
+        print('turbando')
+revisao() 

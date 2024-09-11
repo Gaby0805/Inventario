@@ -26,7 +26,7 @@ def main(page: ft.Page):
                 clear=False,
                 view=criar_relatorio
             ),
-            path(
+            path( 
                 url='/relatorios/logs',
                 clear=False,
                 view=criar_relatorio_logs

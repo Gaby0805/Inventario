@@ -4,7 +4,7 @@ from flet_route import Params,Basket
 
 def clt_view(page:ft.Page, params:Params, basket:Basket):
     page.title = 'page_view'
-
+    page.window.maximized = True
 
     return ft.View(
         "/dashboard/clt",
